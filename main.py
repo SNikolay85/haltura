@@ -59,8 +59,10 @@ def search_post(parameter):
 #     pprint(search_post(i))
 
 for i in list_group:
-    print(i['name'])
-    pprint(search_post_wall(i, 'работа'))
+    result = search_post_wall(i, 'ремонт')
+    if result != []:
+        print(i['name'])
+        pprint(result)
 
 #dd = datetime.fromtimestamp(date)
 
