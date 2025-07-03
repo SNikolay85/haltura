@@ -14,3 +14,5 @@ SALT = os.getenv('SALT')
 TOKEN = os.getenv('TOKEN')
 TOKEN_BOT = os.getenv('TOKEN_BOT')
 SERVICE_KEY = os.getenv('SERVICE_KEY')
+
+TOKEN_HH = os.getenv('TOKEN_HH')
