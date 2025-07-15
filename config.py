@@ -11,8 +11,12 @@ PG_PORT = os.getenv('POSTGRES_PORT')
 
 SALT = os.getenv('SALT')
 
-TOKEN = os.getenv('TOKEN')
-TOKEN_BOT = os.getenv('TOKEN_BOT')
+TOKEN_TBOT = os.getenv('TOKEN_TBOT')
 SERVICE_KEY = os.getenv('SERVICE_KEY')
 
 TOKEN_HH = os.getenv('TOKEN_HH')
+
+
+NEW_TBOT = os.getenv('NEW_TBOT')
+BASE_SITE = os.getenv('BASE_SITE')
+ADMIN_ID = os.getenv('ADMIN_ID')
