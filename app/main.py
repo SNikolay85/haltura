@@ -6,6 +6,8 @@ from app.bot.handlers.admin_route import admin_router
 from config import BASE_SITE
 from aiogram.types import Update
 from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from app.pages.router import router_pages
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -29,6 +31,10 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+app.mount('/static', StaticFiles(directory='app/static'), name='static')
+
+app.include_router(router_pages)
 
 
 @app.post("/webhook")

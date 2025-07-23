@@ -56,6 +56,20 @@ class BaseDAO:
             return result.scalars().all()
 
     @classmethod
+    async def find_all_lst(cls):
+        async with Session() as session:
+            query = select(cls.model)
+            result = await session.execute(query)
+            return result.scalars().all()
+
+    @classmethod
+    async def find_user_by_id(cls, data_id: int):
+        async with Session() as session:
+            query = select(cls.model).filter_by(telegram_id=data_id)
+            result = await session.execute(query)
+            return result.scalar_one_or_none()
+
+    @classmethod
     async def add(cls, **values):
         """
         Асинхронно создает новый экземпляр модели с указанными значениями.

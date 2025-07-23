@@ -11,8 +11,7 @@ def main_keyboard(user_id: int, first_name: str) -> ReplyKeyboardMarkup:
     kb.button(text="🌐 Мои заявки", web_app=WebAppInfo(url=url_applications))
     kb.button(text="📝 Оставить заявку", web_app=WebAppInfo(url=url_add_application))
     kb.button(text="ℹ️ О нас")
-    if user_id == ADMIN_ID:
-        print('tyt')
+    if user_id == int(ADMIN_ID):
         kb.button(text="🔑 Админ панель")
     kb.adjust(1)
     return kb.as_markup(resize_keyboard=True)
